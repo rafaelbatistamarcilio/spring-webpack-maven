@@ -1,7 +1,9 @@
 (function () {
 
+    angular.module('app').component('appHome', { controller: HomeController, template: 'TESTE' })
+
     function HomeController() {
-        vm = this;
+        var vm = this;
 
         vm.$onInit = $onInit;
 
@@ -25,13 +27,4 @@
             return new Promise(resolve => resolve({ teste: 'TESTE ASYNC' }))
         }
     }
-
-
-
-    angular.module('app').component('appHome', {
-        controller: HomeController,
-        template: 'TESTE'
-
-    })
-
 })();
