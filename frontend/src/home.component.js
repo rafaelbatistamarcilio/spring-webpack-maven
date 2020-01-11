@@ -1,12 +1,11 @@
 (function () {
 
-    angular.module('app').component('appHome', { controller: HomeController, template: 'TESTE' })
+    angular.module('app').component('appHome', { controller: HomeController, template: 'TESTE 1 : <app-class-component></app-class-component>' })
 
     function HomeController() {
         var vm = this;
 
         vm.$onInit = $onInit;
-
 
         function $onInit() {
             testeArrowFunction();
@@ -24,7 +23,7 @@
         }
 
         async function testeAsync() {
-            return new Promise(resolve => resolve({ teste: 'TESTE ASYNC' }))
+            return new Promise(resolve => resolve({ teste: 'TESTE ASYNC ' }))
         }
     }
 })();
