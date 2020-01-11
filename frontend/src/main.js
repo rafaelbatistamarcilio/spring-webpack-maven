@@ -1,5 +1,6 @@
+/** VENDOR */
+require('angular');
 
-const angular = require('angular');
-
+/** APP */
 require('./app');
 require('./home.component');

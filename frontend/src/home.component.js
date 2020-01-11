@@ -1,7 +1,7 @@
 (function () {
 
     function HomeController() {
-        vm = this;
+        var vm = this;
 
         vm.$onInit = $onInit;
 
