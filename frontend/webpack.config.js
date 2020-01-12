@@ -43,7 +43,7 @@ const configPromise = new Promise(async resolve => {
                                         debug: true,
                                         corejs: { version: 3, proposals: true },
                                         targets: {
-                                            chrome: "78"
+                                            ie: "11"
                                         }
                                     }
                                 ]
