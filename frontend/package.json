@@ -16,6 +16,6 @@
 		"xml2js": "^0.4.23"
 	},
 	"dependencies": {
-		"angular": "^1.7.9"
+		"angular": "^1.5.11"
 	}
 }
