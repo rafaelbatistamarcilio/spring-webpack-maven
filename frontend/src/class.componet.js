@@ -5,7 +5,7 @@
         static templateUrl = 'angular-templates/class.component.html';
 
         $onInit() {
-            console.log('ClassComponent 2');
+            console.log('ClassComponent 3');
         }
     }
 
