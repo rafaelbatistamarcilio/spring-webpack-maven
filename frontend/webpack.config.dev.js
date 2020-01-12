@@ -1,5 +1,6 @@
 const path = require('path');
-const { obterVersaoPom, obterVersaoPackageJson } = require('./utils');
+const { obterVersaoPom, obterVersaoPackageJson, substituirVersaoDoPomNoJavaScript } = require('./utils');
+const exec = require('child_process').exec;
 
 /** VARIAVEIS */
 const PATH_ENTRY_POINT_APP = './src/main.js';
@@ -55,7 +56,16 @@ const configPromise = new Promise(async resolve => {
                     }
                 }
             ]
-        }
+        },
+        plugins: [
+            {
+                apply: (compiler) => {
+                    compiler.hooks.afterEmit.tap('POST BUILD', compilation => {
+                        substituirVersaoDoPomNoJavaScript(versaoPom);
+                    });
+                }
+            }
+        ]
     }
     resolve(configuracaoWebpack);
 });

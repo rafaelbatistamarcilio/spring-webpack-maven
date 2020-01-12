@@ -40,6 +40,7 @@ const configPromise = new Promise(async resolve => {
                                     {
                                         debug: true,
                                         corejs: 3,
+                                        modules: false,
                                         useBuiltIns: "usage",
                                         targets: {
                                             chrome: "78",
