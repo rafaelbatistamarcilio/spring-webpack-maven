@@ -12,7 +12,7 @@
         }
 
         function testeArrowFunction() {
-            setTimeout(() => console.log('TESTE ARROW FUNCTION '))
+            setTimeout(() => console.log('TESTE ARROW FUNCTION 3'))
         }
 
         async function testeAwait() {

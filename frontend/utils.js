@@ -12,6 +12,12 @@ const obterVersaoPom = async () => {
     return versaoPom;
 }
 
+const obterVersaoPackageJson = () => {
+    const packageJson = require('./package.json');
+    return packageJson.version;
+}
+
 module.exports = {
-    obterVersaoPom
+    obterVersaoPom,
+    obterVersaoPackageJson
 }

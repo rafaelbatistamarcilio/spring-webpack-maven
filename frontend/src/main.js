@@ -1,5 +1,3 @@
-/** VENDOR */
-require('angular');
 
 /** APP */
 require('./app');
