@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.teste</groupId>
 	<artifactId>webpack</artifactId>
-	<version>0.0.31</version>
+	<version>0.0.33</version>
 	<name>webpack</name>
 	<description>Demo project for Spring Boot</description>
 

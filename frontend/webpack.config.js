@@ -38,13 +38,12 @@ const configPromise = new Promise(async resolve => {
                                 [
                                     '@babel/preset-env',
                                     {
-                                        debug: true,
-                                        corejs: 3,
+                                        useBuiltIns: "entry",
                                         modules: false,
-                                        useBuiltIns: "usage",
+                                        debug: true,
+                                        corejs: { version: 3, proposals: true },
                                         targets: {
-                                            chrome: "78",
-                                            ie: "11"
+                                            chrome: "78"
                                         }
                                     }
                                 ]

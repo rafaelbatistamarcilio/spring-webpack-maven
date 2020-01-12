@@ -32,7 +32,7 @@ const configPromise = new Promise(async resolve => {
             rules: [
                 {
                     test: /\.m?js$/,
-                    exclude: /(node_modules|bower_components)/,
+                    exclude: /(node_modules)/,
                     use: {
                         loader: 'babel-loader',
                         options: {
@@ -41,20 +41,20 @@ const configPromise = new Promise(async resolve => {
                                 [
                                     '@babel/preset-env',
                                     {
-                                        debug: true,
-                                        corejs: 3,
                                         useBuiltIns: "usage",
+                                        modules: false,
+                                        debug: true,
+                                        corejs: { version: 3, proposals: true },
                                         targets: {
-                                            chrome: "78",
                                             ie: "11"
                                         }
                                     }
                                 ]
                             ],
-                            plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-proposal-class-properties']
+                            plugins: [ "@babel/plugin-transform-runtime", '@babel/plugin-proposal-class-properties' ]
                         }
                     }
-                }
+                },
             ]
         },
         plugins: [
