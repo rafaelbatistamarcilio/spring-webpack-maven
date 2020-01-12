@@ -36,7 +36,20 @@ const configPromise = new Promise(async resolve => {
                         loader: 'babel-loader',
                         options: {
                             cwd: __dirname,
-                            presets: ['@babel/preset-env'],
+                            presets: [
+                                [
+                                    '@babel/preset-env',
+                                    {
+                                        debug: true,
+                                        corejs: 3,
+                                        useBuiltIns: "usage",
+                                        targets: {
+                                            chrome: "78",
+                                            ie: "11"
+                                        }
+                                    }
+                                ]
+                            ],
                             plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-proposal-class-properties']
                         }
                     }
