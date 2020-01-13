@@ -6,11 +6,9 @@ const {
     substituirVersaoJavaScriptTerceiros
 } = require('./utils');
 
+const versaoPom = obterVersaoPom();
+const versaoPackageJson = obterVersaoPackageJson();
 
-obterVersaoPom().then( versaoPom => {
-    const versaoPackageJson = obterVersaoPackageJson();
-
-    substituirVersaoJavaScriptAplicacao(versaoPom);
-    substituirVersaoJavaScriptTerceiros(versaoPackageJson);
-    substituirVersaoDoPomNoJavaScript(versaoPom);
-});
+substituirVersaoJavaScriptAplicacao(versaoPom);
+substituirVersaoJavaScriptTerceiros(versaoPackageJson);
+substituirVersaoDoPomNoJavaScript(versaoPom);

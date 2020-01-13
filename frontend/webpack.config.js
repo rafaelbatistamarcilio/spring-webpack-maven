@@ -8,7 +8,7 @@ const PATH_DEPLOY_JS = '../src/main/resources/static/js';
 
 const configPromise = new Promise(async resolve => {
 
-    const versaoPom = await obterVersaoPom();
+    const versaoPom = obterVersaoPom();
     const nomeBundleAplicacao = `app.bundle-${versaoPom}`;
     const versaoPackageJson = obterVersaoPackageJson();
     const nomeBundleTerceiros = `terceiros-${versaoPackageJson}`;

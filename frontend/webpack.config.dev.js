@@ -1,6 +1,5 @@
 const path = require('path');
 const { obterVersaoPom, obterVersaoPackageJson, substituirVersaoDoPomNoJavaScript } = require('./utils');
-const exec = require('child_process').exec;
 
 /** VARIAVEIS */
 const PATH_ENTRY_POINT_APP = './src/main.js';
@@ -9,7 +8,7 @@ const PATH_DEPLOY_JS = '../target/classes/static/js';
 
 const configPromise = new Promise(async resolve => {
 
-    const versaoPom = await obterVersaoPom();
+    const versaoPom =  obterVersaoPom();
     const nomeBundleAplicacao = `app.bundle-${versaoPom}`;
     const versaoPackageJson = obterVersaoPackageJson();
     const nomeBundleTerceiros = `terceiros-${versaoPackageJson}`;

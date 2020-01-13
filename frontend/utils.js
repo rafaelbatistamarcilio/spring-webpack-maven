@@ -1,16 +1,14 @@
 var fs = require('fs');
-var xml2js = require('xml2js');
-var parser = new xml2js.Parser();
 
 /** VARIAVEIS */
 const PATH_POM = '../pom.xml';
 const PATH_DEPLOY_TEMPLATE = '../target/classes/templates/app.html';
 
-const obterVersaoPom = async () => {
-    const dadosPom = fs.readFileSync(PATH_POM);
-    const pom = await parser.parseStringPromise(dadosPom);
-    const versaoPom = pom ? pom.project.version : new Date().getTime();
-    return versaoPom;
+const obterVersaoPom = () => {
+    const pom = fs.readFileSync(PATH_POM, 'utf8');
+    const texto = pom.toString();
+    const dados = /<versao>(.*?)<\/versao>/g.exec(texto);
+    return dados[1];
 }
 
 const obterVersaoPackageJson = () => {
