@@ -52,14 +52,105 @@
 	</dependencies>
 
 	<build>
+	
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
-
 			<plugin>
+		        <groupId>org.codehaus.mojo</groupId>
+		        <artifactId>exec-maven-plugin</artifactId>
+		        <version>1.6.0</version>
+
+				<executions>
+					<execution>
+						<id>npm teste</id>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+
+						<phase>generate-resources</phase>
+
+						<configuration>
+							<executable>npm</executable>
+							<arguments>
+								<argument>-v</argument>
+							</arguments>
+						</configuration>
+					</execution> 
+			<!-- 		<execution>
+						<id>npm install</id>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+
+						<phase>generate-resources</phase>
+
+						<configuration>
+							<executable>npm</executable>
+							<arguments>
+								<argument>install</argument>
+							</arguments>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>npm pre build</id>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+
+						<phase>generate-resources</phase>
+
+						<configuration>
+							<executable>npm</executable>
+							<arguments>
+								<argument>run</argument>
+								<argument>pre-build</argument>
+							</arguments>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>npm build</id>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+
+						<phase>generate-resources</phase>
+
+						<configuration>
+							<executable>npm</executable>
+							<arguments>
+								<argument>run</argument>
+								<argument>build</argument>
+							</arguments>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>npm post build</id>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+
+						<phase>package</phase>
+
+						<configuration>
+							<executable>npm</executable>
+							<arguments>
+								<argument>run</argument>
+								<argument>post-build</argument>
+							</arguments>
+						</configuration>
+					</execution> -->
+
+					
+				</executions>
+			</plugin>
+			<!--  <plugin>
 				<groupId>com.github.eirslett</groupId>
 				<artifactId>frontend-maven-plugin</artifactId>
 				<version>1.9.1</version>
@@ -131,7 +222,7 @@
 					<npmVersion>6.13.4</npmVersion>
 					<workingDirectory>frontend</workingDirectory>
 				</configuration>
-			</plugin>
+			</plugin>-->
 
 		</plugins>
 	</build>

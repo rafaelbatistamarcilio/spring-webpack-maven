@@ -8,7 +8,8 @@
 		"pre-build": "node ./pre-build.js",
 		"post-build": "node ./post-build.js",
 		"build": "webpack --config webpack.config.js",
-		"dev": "webpack --config webpack.config.dev.js"
+		"dev": "webpack --config webpack.config.dev.js",
+		"clean": "webpack --config webpack.config.dev.js"
 	},
 	"devDependencies": {
 		"webpack": "^4.41.5",
